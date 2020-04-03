@@ -14,6 +14,8 @@
   <p>ログイン中です</p>
   <p>ユーザー名：{{$user->name}}</p>
   <p>ユーザーID：{{$user->id}}</p>
+  <img src="/storage/profile_images/{{ Auth::id() }}.jpg" width="100px" height="100px">
+
   @endauth
   @guest
   <a href="/login">サインイン</a>

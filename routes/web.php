@@ -34,3 +34,9 @@ Route::delete('/{id}', 'PostsController@destroy')->name('posts.destroy');
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'Auth\RegisterController@register');
 
+    //投稿一覧で、プロフィール画像変更
+    Route::group(['middleware' => ['auth']], function () {
+      //ここでルート定義
+      Route::get('/profile', 'ProfileController@index');
+      Route::post('/profile', 'ProfileController@store');
+    });
